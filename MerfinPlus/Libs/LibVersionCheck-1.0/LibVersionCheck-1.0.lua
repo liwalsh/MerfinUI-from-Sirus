@@ -12,9 +12,14 @@ local MAJOR, MINOR = "LibVersionCheck-1.0", 3;
 local LibVersionCheck = LibStub:NewLibrary(MAJOR, MINOR);
 
 local timer = LibStub("AceTimer-3.0");
-timer:ScheduleTimer(function() LibStub(MAJOR):AutoRegister(embedAddonName); end, 0.1);
 
 if not LibVersionCheck then return; end
+
+timer:ScheduleTimer(function()
+    if LibVersionCheck and LibVersionCheck.AutoRegister then
+        LibVersionCheck:AutoRegister(embedAddonName);
+    end
+end, 0.1);
 local CTL = ChatThrottleLib;
 
 local player = UnitName("player");

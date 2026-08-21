@@ -25,10 +25,10 @@ local ADDON_NAME, addon = ...
 -- =====================================================
 local function CreateMergeSpellEntry(class, interval, desc, prep)
   return {
-         class = class      or "ITEM",
-      interval = interval   or 3,
-          prep = prep       or 0,
-          desc = desc,
+		class = class			or "ITEM",
+		interval = interval		or 3,
+		prep = prep				or 0,
+		desc = desc,
     }
 end
 
